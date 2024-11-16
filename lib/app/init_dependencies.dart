@@ -1,0 +1,24 @@
+import 'package:news_app_clean_architecture/common/cubits/app_user/app_user_cubit.dart';
+import 'package:news_app_clean_architecture/network/connection_checker.dart';
+import 'package:news_app_clean_architecture/constants/app_secrets.dart';
+import 'package:news_app_clean_architecture/features/auth/data/datasources/auth_remote_data_source.dart';
+import 'package:news_app_clean_architecture/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:news_app_clean_architecture/features/auth/domain/repository/auth_repository.dart';
+import 'package:news_app_clean_architecture/features/auth/domain/usecases/current_user.dart';
+import 'package:news_app_clean_architecture/features/auth/domain/usecases/user_login.dart';
+import 'package:news_app_clean_architecture/features/auth/domain/usecases/user_sign_up.dart';
+import 'package:news_app_clean_architecture/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:news_app_clean_architecture/features/news/data/datasources/news_local_data_source.dart';
+import 'package:news_app_clean_architecture/features/news/data/datasources/news_remote_data_source.dart';
+import 'package:news_app_clean_architecture/features/news/data/repositories/news_repository_impl.dart';
+import 'package:news_app_clean_architecture/features/news/domain/repositories/news_repository.dart';
+import 'package:news_app_clean_architecture/features/news/domain/usecases/get_all_news.dart';
+import 'package:news_app_clean_architecture/features/news/domain/usecases/upload_news.dart';
+import 'package:news_app_clean_architecture/features/news/presentation/bloc/news_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:hive/hive.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+part 'init_dependencies.main.dart';
